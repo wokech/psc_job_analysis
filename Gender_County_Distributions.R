@@ -142,6 +142,6 @@ tabyl(all_cas, Gender, County)
 tabyl(stl_cas, Gender)
 tabyl(stl_cas, Gender, County)
 
-
-
+usethis::use_git()
+1
 

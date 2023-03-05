@@ -20,7 +20,7 @@ unique(all_cas$County)
 unique(all_cas$Gender)
 
 all_cas_gender <- all_cas %>%  
-  ggplot(aes(fct_infreq(Gender))) +
+  ggplot(aes(fct_infreq(Gender), fill = Gender)) +
   geom_bar() + 
   theme_minimal() +
   labs(x = "Gender", 
@@ -137,7 +137,11 @@ library(patchwork)
 
 # Get the required frequency tables
 
-tabyl(all_cas, Gender)
-tabyl(all_cas, Gender, County)
-tabyl(stl_cas, Gender)
-tabyl(stl_cas, Gender, County)
+all_cas_gender_df <- data.frame(tabyl(all_cas, Gender))
+all_cas_county_df <- data.frame(tabyl(all_cas, County))
+all_cas_gender_county_df <- data.frame(tabyl(all_cas, Gender, County))
+stl_cas_gender_df <- data.frame(tabyl(stl_cas, Gender))
+stl_cas_county_df <- data.frame(tabyl(stl_cas, County))
+stl_cas_gender_county_df <- data.frame(tabyl(stl_cas, Gender, County))
+
+

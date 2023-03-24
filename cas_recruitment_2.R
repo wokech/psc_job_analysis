@@ -89,19 +89,20 @@ stl_cas_county_df %>%
   scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, 2)) +
   labs(x = "County", 
        y = "Number of Shortlisted Applicants", 
-       title = "",
-       subtitle = "",
+       title = "County of Origin for Shortlisted Applicants",
+       subtitle = "Distribution of shortlisted applicants by their counties of origin",
        caption = "By @willyokech\nData Source: PSC (publicservice.go.ke)",
        fill = "")+
   theme(axis.title.x =element_text(size = 20),
         axis.title.y =element_text(size = 20),
         axis.text.x = element_text(size = 15),
-        plot.title = element_text(family = "URW Palladio L, Italic",size = 16, hjust = 0.5),
-        plot.subtitle = element_text(family = "URW Palladio L, Italic",size = 10, hjust = 0.5),
+        axis.text.y = element_text(size = 17.5),
+        plot.title = element_text(family = "URW Palladio L, Italic",size = 20, face = "bold"),
+        plot.subtitle = element_text(family = "URW Palladio L, Italic",size = 17.5, face = "bold"),
         legend.title = element_text("Helvetica",size = 8, vjust = 1),
-        legend.position = "right",
+        legend.position = "none",
         plot.caption = element_text(family = "URW Palladio L, Italic",size = 12),
         panel.background = element_rect(fill = "white", colour = "white")) 
 
-ggsave("images/stl_cas_county.jpg", width = 8, height = 8)
+ggsave("images/stl_cas_county.jpg", width = 12, height = 12)
 

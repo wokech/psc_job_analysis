@@ -55,26 +55,27 @@ ggplot(aes(x = reorder(stage, population), fill = Gender,
   scale_fill_manual(values = c("#f4c2c2", "#89CFF0")) +
   labs(x = "Application Stage", 
        y = "Number", 
-       title = "",
-       subtitle = "",
-       caption = "By @willyokech\nData Source: PSC (publicservice.go.ke) and OP",
+       title = "Gender distribution",
+       subtitle = "Distribution of males and females at the application, shortlisting, and nomination stages",
+       caption = "By @willyokech\nData Source: PSC (publicservice.go.ke)",
        fill = "")+
-  geom_text(x=3, y=3100, size = 7, font = "Helvetica", label="33% Female") +
-  geom_text(x=2, y=1200, size = 7, font =  "Helvetica", label="36% Female") +
-  geom_text(x=1, y=1200, size = 7, font = "Helvetica", label="26% Female") +
+  geom_text(x=3, y=3100, color = "#f4c2c2", size = 7, font = "Helvetica", label="33% Female") +
+  geom_text(x=2, y=1200, color = "#f4c2c2", size = 7, font =  "Helvetica", label="36% Female") +
+  geom_text(x=1, y=1200, color = "#f4c2c2", size = 7, font = "Helvetica", label="26% Female") +
   geom_label_repel(aes(label=comma(population)),color="black", size = 7, nudge_x = 0, nudge_y = 10, show.legend = FALSE) +
   theme(axis.title.x =element_text(size = 20),
         axis.title.y =element_text(size = 20),
         axis.text.x = element_text(size = 15),
         axis.text.y = element_text(size = 15),
-        plot.title = element_text(family = "URW Palladio L, Italic",size = 16, hjust = 0.5),
-        plot.subtitle = element_text(family = "URW Palladio L, Italic",size = 10, hjust = 0.5),
+        plot.title = element_text(family = "URW Palladio L, Italic",size = 20, face = "bold"),
+        plot.subtitle = element_text(family = "URW Palladio L, Italic",size = 15, face = "bold"),
         legend.title = element_text("Helvetica",size = 8, vjust = 1),
-        legend.position = "right",
+        legend.position = "none",
+        legend.text=element_text(size=15),
         plot.caption = element_text(family = "URW Palladio L, Italic",size = 12),
         panel.background = element_rect(fill = "white", colour = "white")) 
 
-ggsave("images/nom_cas_county.jpg", width = 8, height = 8)
+ggsave("images/app_stl_nom_cas_gender.jpg", width = 12, height = 8)
 
 ####################################
 
@@ -102,21 +103,21 @@ pwd %>%
   ylim(0,80) +
   labs(x = "Application Stage", 
        y = "Number", 
-       title = "",
-       subtitle = "",
-       caption = "By @willyokech\nData Source: PSC (publicservice.go.ke) and OP",
+       title = "Recruitment of Persons with Disabilities (PWD)",
+       subtitle = "Distribution of PWDs at the application, shortlisting, and nomination stages",
+       caption = "By @willyokech\nData Source: PSC (publicservice.go.ke)",
        fill = "")+
   geom_text(aes(label=comma(number)),color="black", size = 8, vjust = -0.5, position = position_dodge(0.9)) +
   theme(axis.title.x =element_text(size = 20),
         axis.title.y =element_text(size = 20),
         axis.text.x = element_text(size = 15),
         axis.text.y = element_text(size = 15),
-        plot.title = element_text(family = "URW Palladio L, Italic",size = 16, hjust = 0.5),
-        plot.subtitle = element_text(family = "URW Palladio L, Italic",size = 10, hjust = 0.5),
+        plot.title = element_text(family = "URW Palladio L, Italic",size = 20, face = "bold"),
+        plot.subtitle = element_text(family = "URW Palladio L, Italic",size = 15, face = "bold"),
         legend.title = element_text("Helvetica",size = 8, vjust = 1),
-        legend.position = "right",
+        legend.position = "none",
         plot.caption = element_text(family = "URW Palladio L, Italic",size = 12),
         panel.background = element_rect(fill = "white", colour = "white")) 
 
-ggsave("images/pwd.jpg", width = 8, height = 8)
+ggsave("images/pwd.jpg", width = 12, height = 8)
 

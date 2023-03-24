@@ -46,8 +46,10 @@ ggplot(nom_cas_county_df_2, aes(area = n, fill = County,
   geom_treemap() +
   geom_treemap_text(colour = "white",
                     place = "centre",
-                    size = 15) +
+                    size = 20) +
   theme(legend.position = "none")
+
+ggsave("images/nom_county_over_1.jpg", width = 12, height = 8)
 
 # With CAS's equal to 1
 nom_cas_county_df_3 <- nom_cas_county_df %>%
@@ -58,8 +60,10 @@ ggplot(nom_cas_county_df_3, aes(area = n, fill = County,
   geom_treemap() +
   geom_treemap_text(colour = "white",
                     place = "centre",
-                    size = 15) +
+                    size = 20) +
   theme(legend.position = "none")
+
+ggsave("images/nom_county_equal_1.jpg", width = 12, height = 8)
 
 # With no CAS's
 

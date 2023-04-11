@@ -1,4 +1,4 @@
-# An analysis of the CAS recruitment in Kenya (Part 8)
+# An analysis of the CAS recruitment in Kenya (Part 5)
 
 # Notes:
 # 1) Gradients - https://digitalsynopsis.com/design/beautiful-color-ui-gradients-backgrounds/
@@ -24,9 +24,11 @@ library(treemapify)
 #install.packages("ggrepel")
 library(ggrepel)
 
+#################################################################################
 # PYRAMID PLOT
+#################################################################################
 
-# Perform joins to combine the total, shortlist, and nominatetd datasets
+# Perform joins to combine the total, shortlist, and nominated datasets
 
 all_stl_gender <- full_join(all_cas_gender_df, stl_cas_gender_df, by = "Gender")
 all_stl_nom_gender <- full_join(all_stl_gender, nom_cas_gender_df, by = "Gender")
@@ -55,31 +57,32 @@ ggplot(aes(x = reorder(stage, population), fill = Gender,
   scale_fill_manual(values = c("#f4c2c2", "#89CFF0")) +
   labs(x = "Application Stage", 
        y = "Number", 
-       title = "Gender distribution",
+       title = "Only 26% of CAS appointees are women",
        subtitle = "Distribution of males and females at the application, shortlisting, and nomination stages",
-       caption = "By @willyokech\nData Source: PSC (publicservice.go.ke)",
-       fill = "")+
-  geom_text(x=3, y=3100, color = "#f4c2c2", size = 7, font = "Helvetica", label="33% Female") +
-  geom_text(x=2, y=1200, color = "#f4c2c2", size = 7, font =  "Helvetica", label="36% Female") +
-  geom_text(x=1, y=1200, color = "#f4c2c2", size = 7, font = "Helvetica", label="26% Female") +
+       caption = "Source: PSC (publicservice.go.ke) | By @willyokech",
+       fill = "") +
+  geom_text(x=3, y=3100, color = "#f4c2c2", size = 7, family= "Helvetica", fontface="bold", label="33% Female") +
+  geom_text(x=2, y=1200, color = "#f4c2c2", size = 7, family =  "Helvetica", fontface="bold", label="36% Female") +
+  geom_text(x=1, y=1200, color = "#f4c2c2", size = 7, family = "Helvetica", fontface="bold", label="26% Female") +
   geom_label_repel(aes(label=comma(population)),color="black", size = 7, nudge_x = 0, nudge_y = 10, show.legend = FALSE) +
   theme(axis.title.x =element_text(size = 20),
         axis.title.y =element_text(size = 20),
         axis.text.x = element_text(size = 15),
         axis.text.y = element_text(size = 15),
-        plot.title = element_text(family = "URW Palladio L, Italic",size = 20, face = "bold"),
-        plot.subtitle = element_text(family = "URW Palladio L, Italic",size = 15, face = "bold"),
-        legend.title = element_text("Helvetica",size = 8, vjust = 1),
+        plot.title = element_text(family="Helvetica", face="bold", size = 25),
+        plot.subtitle = element_text(family="Helvetica", face="bold", size = 15),
+        legend.title = element_text("Helvetica",size = 1, vjust = 1),
         legend.position = "none",
         legend.text=element_text(size=15),
-        plot.caption = element_text(family = "URW Palladio L, Italic",size = 12),
-        panel.background = element_rect(fill = "white", colour = "white")) 
+        plot.caption = element_text(family = "Helvetica",size = 15, face = "bold"),
+        plot.background = element_rect(fill = "beige", colour = "beige"),
+        panel.background = element_rect(fill = "beige", colour = "beige")) 
 
 ggsave("images/app_stl_nom_cas_gender.jpg", width = 12, height = 8)
 
-####################################
-
+#################################################################################
 # PWD
+#################################################################################
 
 all_cas_pwd <- all_cas %>% 
   filter(str_detect(Name, "PWD")) %>%
@@ -103,21 +106,23 @@ pwd %>%
   ylim(0,80) +
   labs(x = "Application Stage", 
        y = "Number", 
-       title = "Recruitment of Persons with Disabilities (PWD)",
+       title = "One out of the 50 CAS appointees is a person with a disability (PWD)",
        subtitle = "Distribution of PWDs at the application, shortlisting, and nomination stages",
-       caption = "By @willyokech\nData Source: PSC (publicservice.go.ke)",
+       caption = "Source: PSC (publicservice.go.ke) | By @willyokech",
        fill = "")+
   geom_text(aes(label=comma(number)),color="black", size = 8, vjust = -0.5, position = position_dodge(0.9)) +
   theme(axis.title.x =element_text(size = 20),
         axis.title.y =element_text(size = 20),
         axis.text.x = element_text(size = 15),
         axis.text.y = element_text(size = 15),
-        plot.title = element_text(family = "URW Palladio L, Italic",size = 20, face = "bold"),
-        plot.subtitle = element_text(family = "URW Palladio L, Italic",size = 15, face = "bold"),
-        legend.title = element_text("Helvetica",size = 8, vjust = 1),
+        plot.title = element_text(family="Helvetica", face="bold", size = 25),
+        plot.subtitle = element_text(family="Helvetica", face="bold", size = 15),
+        legend.title = element_text("Helvetica",size = 1, vjust = 1),
         legend.position = "none",
-        plot.caption = element_text(family = "URW Palladio L, Italic",size = 12),
-        panel.background = element_rect(fill = "white", colour = "white")) 
+        legend.text=element_text(size=15),
+        plot.caption = element_text(family = "Helvetica",size = 15, face = "bold"),
+        plot.background = element_rect(fill = "beige", colour = "beige"),
+        panel.background = element_rect(fill = "beige", colour = "beige"))
 
 ggsave("images/pwd.jpg", width = 12, height = 8)
 

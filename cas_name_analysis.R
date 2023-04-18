@@ -69,6 +69,7 @@ p1 <- ggplot(word_count_male, aes(label = first_name, size = n)) +
         plot.background = element_rect(fill = "beige", colour = "beige"),
         panel.background = element_rect(fill = "beige", colour = "beige"))
 
+p1
 ggsave("images/all_cas_first_name_male.png", width = 6, height = 4)
 
 # Females

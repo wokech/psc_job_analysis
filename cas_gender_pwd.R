@@ -59,7 +59,7 @@ ggplot(aes(x = reorder(stage, population), fill = Gender,
        y = "Number", 
        title = "Only 26% of CAS appointees are women",
        subtitle = "Distribution of males and females at the application, shortlisting, and nomination stages",
-       caption = "Source: PSC (publicservice.go.ke) | By @willyokech",
+       caption = "Data Source: PSC (publicservice.go.ke) | By @willyokech",
        fill = "") +
   geom_text(x=3, y=3100, color = "#f4c2c2", size = 7, family= "Helvetica", fontface="bold", label="33% Female") +
   geom_text(x=2, y=1200, color = "#f4c2c2", size = 7, family =  "Helvetica", fontface="bold", label="36% Female") +
@@ -108,7 +108,7 @@ pwd %>%
        y = "Number", 
        title = "One out of the 50 CAS appointees is a person with a disability (PWD)",
        subtitle = "Distribution of PWDs at the application, shortlisting, and nomination stages",
-       caption = "Source: PSC (publicservice.go.ke) | By @willyokech",
+       caption = "Data Source: PSC (publicservice.go.ke) | By @willyokech",
        fill = "")+
   geom_text(aes(label=comma(number)),color="black", size = 8, vjust = -0.5, position = position_dodge(0.9)) +
   theme(axis.title.x =element_text(size = 20),

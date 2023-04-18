@@ -51,7 +51,7 @@ ggplot(nom_cas_county_df_2, aes(area = n, fill = County,
   theme(legend.position = "none") +
   labs(title = "More than one CAS nominee",
        subtitle = "A list of counties with more than one CAS nominee",
-       caption = "Source: PSC (publicservice.go.ke) | By @willyokech",
+       caption = "Data Source: PSC (publicservice.go.ke) | By @willyokech",
        fill = "") +
   theme(axis.title.x =element_text(size = 20),
         axis.title.y =element_text(size = 20),
@@ -100,7 +100,7 @@ ggplot(word_count_nom_cas_zero, aes(label = County)) +
   theme_minimal() + 
   labs(title = "Zero CAS nominees",
        subtitle = "A list of counties with zero CAS nominees",
-       caption = "Source: PSC (publicservice.go.ke) | By @willyokech",
+       caption = "Data Source: PSC (publicservice.go.ke) | By @willyokech",
        fill = "") +
   theme(axis.title.x =element_text(size = 20),
         axis.title.y =element_text(size = 20),

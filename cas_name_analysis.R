@@ -98,9 +98,9 @@ p2
 ggsave("images/all_cas_first_name_female.png", width = 6, height = 4)
 
 p1 + p2 + 
-  plot_annotation(title = "Esther and John are the most common applicant first names",
+  plot_annotation(title = "Esther and John were the most common applicant first names",
                   subtitle = "Visualization of applicant first names with greater than 20 occurrences",
-                  caption = "Source: rKenyaCensus | By: @willyokech\n*Word size is proportional to name frequency",
+                  caption = "Data Source: rKenyaCensus | By: @willyokech\n*Word size is proportional to name frequency",
                   theme = theme(plot.title = element_text(family="Helvetica", face="bold", size = 25),
                                 plot.subtitle = element_text(family="Helvetica", face="bold", size = 15),
                                 plot.caption = element_text(family = "Helvetica",size = 15, face = "bold"),

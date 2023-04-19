@@ -1,7 +1,9 @@
-# Public Service Commission Data Analysis
-## The goal of this project is to generate insightful visualizations using government recruitment data form the Public Service Commission (Kenya)
+# Public Service Commission of Kenya Data Analysis
 
-### (A) Recruitment of Chief Administrative Secretaries in Kenya (2022-2023)
+The goal of this project is to perform data-driven analyses and generate insightful visualizations using government recruitment data from the Public Service Commission (Kenya)
+
+## (A) Recruitment of Chief Administrative Secretaries in Kenya (2022-2023)
+
 ### Visualization 1 - Gender distribution at the different recruitment stages
 ### [Code](https://github.com/wokech/PSC_Job_Analysis_2023/blob/master/cas_gender_county.R)
 

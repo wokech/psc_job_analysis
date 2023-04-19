@@ -1,6 +1,6 @@
 # Public Service Commission of Kenya Data Analysis
 
-The goal of this project is to perform data-driven analyses and generate insightful visualizations using government recruitment data from the Public Service Commission (Kenya)
+The goal of this project is to perform data-driven analyses and generate insightful visualizations using government recruitment data from the Public Service Commission (Kenya).
 
 ## (A) Recruitment of Chief Administrative Secretaries in Kenya (2022-2023)
 
